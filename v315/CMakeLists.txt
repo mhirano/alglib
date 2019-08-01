@@ -89,6 +89,7 @@ add_library(alglib SHARED
 ## Specify header files to be installed
 set_target_properties(alglib
         PROPERTIES
+        DEBUG_POSTFIX "d"
         OUTPUT_NAME "alglib.${VERSION_MAJOR}.${VERSION_MINOR}"
         PUBLIC_HEADER "${alglib_include}"
         )
@@ -98,7 +99,6 @@ target_link_libraries(alglib PUBLIC ${alglib_lib} )
 
 install (TARGETS alglib
         EXPORT alglib-export
-#        CONFIGURATIONS Release
         LIBRARY DESTINATION lib
         INCLUDES DESTINATION include
         PUBLIC_HEADER DESTINATION include/alglib
