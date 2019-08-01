@@ -38,7 +38,7 @@ if(UNIX AND NOT APPLE)
     message("OS Detected: Linux")
 
     set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install/linux)
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DAE_DEBUG4POSIX")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DAE_DEBUG4POSIX")
 
     include_directories(/usr/include)
     link_directories(/usr/lib/x86_64-linux-gnu)
@@ -46,6 +46,7 @@ elseif(APPLE)
     message(STATUS "OS Detected: Mac")
 
     set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install/mac)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DAE_DEBUG4POSIX")
 
     include_directories(/usr/local/include)
 
