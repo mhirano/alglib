@@ -38,6 +38,7 @@ if(UNIX AND NOT APPLE)
     message("OS Detected: Linux")
 
     set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install/linux)
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DAE_DEBUG4POSIX")
 
     include_directories(/usr/include)
     link_directories(/usr/lib/x86_64-linux-gnu)
@@ -120,4 +121,4 @@ install(EXPORT alglib-export DESTINATION share/cmake/alglib/
 
 # install (TARGETS sample DESTINATION bin)
 
-#add_subdirectory(test)
+add_subdirectory(tests)
