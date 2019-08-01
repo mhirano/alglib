@@ -98,8 +98,8 @@ target_link_libraries(alglib PUBLIC ${alglib_lib} )
 
 install (TARGETS alglib
         EXPORT alglib-export
-        CONFIGURATIONS Release
-        LIBRARY DESTINATION lib/release
+#        CONFIGURATIONS Release
+        LIBRARY DESTINATION lib
         INCLUDES DESTINATION include
         PUBLIC_HEADER DESTINATION include/alglib
         )
