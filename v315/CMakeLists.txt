@@ -69,11 +69,11 @@ set(alglib_lib "")
 
 # My include files
 include_directories(
-        ${PROJECT_SOURCE_DIR}/src
+        ${PROJECT_SOURCE_DIR}/src/alglib
 )
 
-file(GLOB alglib_include "${PROJECT_SOURCE_DIR}/src/*.h")
-file(GLOB alglib_src "${PROJECT_SOURCE_DIR}/src/*.cpp")
+file(GLOB alglib_include "${PROJECT_SOURCE_DIR}/src/alglib/*.h")
+file(GLOB alglib_src "${PROJECT_SOURCE_DIR}/src/alglib/*.cpp")
 
 #
 # Build library
@@ -92,12 +92,17 @@ add_library(alglib SHARED
 set_target_properties(alglib
         PROPERTIES
         DEBUG_POSTFIX "d"
-        OUTPUT_NAME "alglib.${VERSION_MAJOR}.${VERSION_MINOR}"
+        VERSION "${VERSION_MAJOR}.${VERSION_MINOR}"
+        SOVERSION "${VERSION_MAJOR}.${VERSION_MINOR}"
         PUBLIC_HEADER "${alglib_include}"
         )
 
-target_link_libraries(alglib PUBLIC ${alglib_lib} )
+target_link_libraries(alglib PRIVATE ${alglib_lib} )
 
+target_include_directories(${PROJECT_NAME} INTERFACE
+        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+        )
 
 install (TARGETS alglib
         EXPORT alglib-export

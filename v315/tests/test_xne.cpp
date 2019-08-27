@@ -1,19 +1,19 @@
-#include "stdafx.h"
+#include "alglib/stdafx.h"
 #include <sstream>
 #include <math.h>
 
-#include "alglibmisc.h"
-#include "alglibinternal.h"
-#include "linalg.h"
-#include "statistics.h"
-#include "dataanalysis.h"
-#include "specialfunctions.h"
-#include "solvers.h"
-#include "optimization.h"
-#include "diffequations.h"
-#include "fasttransforms.h"
-#include "integration.h"
-#include "interpolation.h"
+#include "alglib/alglibmisc.h"
+#include "alglib/alglibinternal.h"
+#include "alglib/linalg.h"
+#include "alglib/statistics.h"
+#include "alglib/dataanalysis.h"
+#include "alglib/specialfunctions.h"
+#include "alglib/solvers.h"
+#include "alglib/optimization.h"
+#include "alglib/diffequations.h"
+#include "alglib/fasttransforms.h"
+#include "alglib/integration.h"
+#include "alglib/interpolation.h"
 
 #if !defined(AE_NO_EXCEPTIONS)
 #error "This test should be compiled with AE_NO_EXCEPTIONS defined"

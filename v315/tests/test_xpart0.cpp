@@ -1,4 +1,4 @@
-#include "linalg.h"
+#include "alglib/linalg.h"
 
 int main()
 {
