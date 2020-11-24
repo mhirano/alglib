@@ -28,7 +28,7 @@ else()
     message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++14 support. Please use a different C++ compiler.")
 endif()
 
-set(CMAKE_CXX_FLAGS_DEBUG "-DDEBUG -g -pg -O0")
+set(CMAKE_CXX_FLAGS_DEBUG "-DDEBUG -g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-DRELEASE -O3 -DNDEBUG -march=native")
 
 #
